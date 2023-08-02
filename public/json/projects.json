@@ -1,0 +1,23 @@
+[
+    {
+        "id":"1",
+        "name":"ecommerce",
+        "description":"Integrado con facturación electrónica y pasarela de pago de PayPal.",
+        "img_webp":"images/projects/ecommerce.webp",
+        "img_jpg":"images/projects/ecommerce.jpg"
+    },
+    {
+        "id":"2",
+        "name":"membresias",
+        "description":"Diseñada e integrada con Stripe para aceptar pagos recurrentes.",
+        "img_webp":"images/projects/memberships.webp",
+        "img_jpg":"images/projects/memberships.jpg"
+    },
+    {
+        "id":"3",
+        "name":"blog",
+        "description":"Acceso con Google y Facebook para la interactuar con los posts.",
+        "img_webp":"images/projects/blog.webp",
+        "img_jpg":"images/projects/blog.jpg"
+    }
+]

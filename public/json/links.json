@@ -1,0 +1,23 @@
+[
+    {
+        "id":"1",
+        "name":"Email",
+        "icon":"envelope",
+        "address":"gp.zisrael@gmail.com",
+        "text":"gp.zisrael@gmail.com"
+    },
+    {
+        "id":"2",
+        "name":"GitHub",
+        "icon":"github",
+        "address":"https://github.com/Greg-502?tab=repositories",
+        "text":"Greg-502"
+    },
+    {
+        "id":"3",
+        "name":"Linkedin",
+        "icon":"linkedin",
+        "address":"www.linkedin.com/in/greg-puac",
+        "text":"Gregorio Puac Zapeta"
+    }
+]
