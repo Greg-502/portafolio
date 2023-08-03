@@ -1,9 +1,12 @@
 import { motion } from "framer-motion"
-
 import { Link } from "react-router-dom"
 import Header from "./Header"
+import { useContext } from "react"
+import { RefContext } from "src/utils/Context/RefContext"
 
 export default function Preview({ id, name, description, img_webp, img_jpg }) {
+    const { PATH_IMAGE } = useContext(RefContext)
+
     return(
         <div className={`${parseInt(id) === 2 && `flex items-center`}`}>
             { parseInt(id) === 1 && <Header /> }
@@ -24,14 +27,14 @@ export default function Preview({ id, name, description, img_webp, img_jpg }) {
                 <Link to={`/detail/${ name }`}>
                     {
                         <picture>
-                            <source srcSet={`${ import.meta.env.VITE_VERCEL_IMAGE+`${ img_webp }`}`} type="image/webp" />
-                            <source srcSet={`${import.meta.env.VITE_VERCEL_IMAGE+`${ img_jpg }`}`} type="image/png" />
+                            <source srcSet={`${ PATH_IMAGE + `${ img_webp }`}`} type="image/webp" />
+                            <source srcSet={`${ PATH_IMAGE + `${ img_jpg }`}`} type="image/png" />
 
                             <motion.img
                                 whileHover={{ scale: 1.03 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                 className='shadow-lg object-cover max-w-full md:hover:shadow-xl mt-4'
-                                src={`${ import.meta.env.VITE_VERCEL_IMAGE+`${ img_webp }`}`}
+                                src={`${ PATH_IMAGE + `${ img_webp }`}`}
                                 alt={ `Proyecto: ${ name } ` }
                                 width="100%"
                                 height="100%">

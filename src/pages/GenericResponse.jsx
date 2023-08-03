@@ -13,18 +13,18 @@ export default function GenericResponse({ message }){
                 description={`${ project ? `Proyecto: ${ project }` : `404 no encontrado`}`}
                 url={`https://www.gregpuac.dev/detail/${ project ? `${ project}` : `404`}/`}
                 type="summary_large_image"
-                image={`${ import.meta.env.VITE_VERCEL_IMAGE+'images/Imagen.webp'}`}
+                image={`${ PATH_IMAGE + 'images/Imagen.webp'}`}
             />
 
             {
                 <section className='items-center flex justify-center h-screen px-6 md:px-12 flex-col py-10 md:py-0'>
                     <div className="w-full md:max-w-7xl md:p-10 items-center flex justify-center flex-col">
                         <picture>
-                            <source srcSet={`${ import.meta.env.VITE_VERCEL_IMAGE+'images/NotFoundPage.webp'}`} type="image/webp" />
-                            <source srcSet={`${ import.meta.env.VITE_VERCEL_IMAGE+'images/NotFoundPage.png'}`} type="image/png" />
+                            <source srcSet={`${ PATH_IMAGE + 'images/NotFoundPage.webp'}`} type="image/webp" />
+                            <source srcSet={`${ PATH_IMAGE + 'images/NotFoundPage.png'}`} type="image/png" />
                             <img 
                                 className='bg-yellow-300 dark:bg-slate-900 rounded-full shadow-lg object-cover w-40'
-                                src={`${ import.meta.env.VITE_VERCEL_IMAGE+'images/NotFoundPage.webp'}`}
+                                src={`${ PATH_IMAGE + 'images/NotFoundPage.webp'}`}
                                 alt={'Página no encontrada'}
                                 width="100%"
                                 height="100%">

@@ -4,10 +4,10 @@ import { RefContext } from 'src/utils/Context/RefContext';
 
 export default function Header() {
     const isPresent = useIsPresent();
-    const { HandleScroll, projects } = useContext(RefContext)
+    const { HandleScroll, projects, PATH_IMAGE } = useContext(RefContext)
 
     return(
-        <div className='flex justify-center items-center px-6 md:px-2 flex-col py-10'>
+        <div className='flex justify-center items-center flex-col py-10 px-6 md:px-2 min-h-screen md:min-h-full'>
             <div className="md:grid md:grid-cols-2 md:gap-10 md:justify-evenly md:max-w-full lg:max-w-7xl md:p-10">
                 <motion.div 
                     initial={{ opacity:0, scale:0.5 }}
@@ -67,11 +67,11 @@ export default function Header() {
                     }}
                     className='flex justify-center items-center md:px-0 px-2 py-5 md:py-4'>
                         <picture>
-                            <source srcSet={`${import.meta.env.VITE_VERCEL_IMAGE + "images/Imagen.webp"}`} type="image/webp" />
-                            <source srcSet={`${import.meta.env.VITE_VERCEL_IMAGE + "images/Imagen.png"}`} type="image/png" />
+                            <source srcSet={`${ PATH_IMAGE + "images/Imagen.webp"}`} type="image/webp" />
+                            <source srcSet={`${ PATH_IMAGE + "images/Imagen.png"}`} type="image/png" />
                             <img 
                                 className='shadow-lg object-cover rounded-full bg-yellow-300 dark:bg-slate-900 max-w-sm'
-                                src={`${import.meta.env.VITE_VERCEL_IMAGE + "images/Imagen.webp"}`}
+                                src={`${ PATH_IMAGE + "images/Imagen.webp"}`}
                                 alt='Greg Puac memoji'
                                 width="100%"
                                 height="100%">
@@ -88,7 +88,7 @@ export default function Header() {
                     delay:1,
                     ease:[0, 0.71, 0.2, 1.01]
                 }}
-                className='mt-4 md:mt-0'>
+                className='mt-4 md:mt-0 flex justify-center'>
                     <svg
                         className="animate-bounce w-10 h-10 text-slate-600 dark:text-slate-400" 
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
