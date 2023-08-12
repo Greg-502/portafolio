@@ -40,7 +40,7 @@ export default function Header() {
                         <motion.a 
                             whileHover={{ scale:1.1 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                            className="my-2 rounded-2xl text-lg md:text-md px-4 text-center cursor-pointer py-4 text-slate-100 bg-purple-500 hover:bg-purple-400 shadow-lg"
+                            className="my-2 rounded-2xl text-lg md:text-md px-4 text-center cursor-pointer py-4 text-white bg-purple-500 hover:bg-purple-400 shadow-lg"
                             target="_blank"
                             rel="noreferrer"
                             href={`mailto:${data && data[0].address}`}
@@ -53,6 +53,7 @@ export default function Header() {
                                 data && data.map((element) => {
                                     return(
                                         <a
+                                            aria-label={`Link for go to my: ${element.name}`}
                                             target="_blank"
                                             rel="noreferrer"
                                             href={ `${ element.name === 'Email' ? `mailto:${element.address}` : element.address }` }
