@@ -1,4 +1,3 @@
-import 'boxicons'
 import { Toaster } from "react-hot-toast";
 import Navbar from 'src/components/Nav/Navbar'
 import Header from 'src/components/Header'

@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from 'react'
+import { createContext, useRef } from 'react'
 import { HandleScroll } from 'src/utils/Functions/HandleScroll'
 
 export const RefContext = createContext()

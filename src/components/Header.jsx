@@ -1,10 +1,13 @@
 import { motion, useIsPresent } from 'framer-motion';
 import { useContext } from 'react';
 import { RefContext } from 'src/utils/Context/RefContext';
+import useFetchRequest from 'src/utils/Hooks/useFetchRequest';
+import SVGLogos from './Contact/SVGLogos';
 
 export default function Header() {
     const isPresent = useIsPresent();
-    const { HandleScroll, projects, PATH_IMAGE } = useContext(RefContext)
+    const { PATH_IMAGE } = useContext(RefContext)
+    const [ data ] = useFetchRequest("json/links.json")
 
     return(
         <div className='flex justify-center items-center flex-col py-10 px-6 md:px-2 min-h-screen md:min-h-full'>
@@ -29,30 +32,41 @@ export default function Header() {
                         <p className='text-slate-500 dark:text-slate-400 text-sm lg:text-base'>
                             Transeunte pero nunca expectante; como dijo Galeano:
                         </p>
-                        <p className='text-slate-900 dark:text-slate-100  headers tracking-normal text-xl lg:text-2xl font-semibold italic'>
-                            "Si me caí, es porque estaba caminando."</p>
+                        <p className='text-slate-900 dark:text-slate-100 headers tracking-normal text-xl lg:text-2xl font-semibold italic'>
+                            &quot;Si me caí, es porque estaba caminando.&quot;</p>
                     </div>
                     
-                    <div className='tracking-wide flex flex-row justify-center md:justify-start gap-3'>
+                    <div className='tracking-wide flex justify-center md:justify-start gap-1 md:gap-3'>
                         <motion.a 
                             whileHover={{ scale:1.1 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
                             className="my-2 rounded-2xl text-lg md:text-md px-4 text-center cursor-pointer py-4 text-slate-100 bg-purple-500 hover:bg-purple-400 shadow-lg"
                             target="_blank"
                             rel="noreferrer"
-                            href='mailto:gp.zisrael@gmail.com'
+                            href={`mailto:${data && data[0].address}`}
                         >
                             Contáctame
                         </motion.a>
 
-                        <div className='my-2 px-4 py-4'>
-                            <button
-                                aria-label='to projects'
-                                onClick={ () => HandleScroll(projects.current) }
-                                className="text-lg md:text-md text-center md:cursor-pointer text-slate-600 hover:text-slate-500 dark:text-slate-400 dark:hover:text-slate-100 "
-                            >
-                                Proyectos
-                            </button>
+                        <div className='my-2 p-4 md:space-x-4 space-x-3 flex '>
+                            {
+                                data && data.map((element) => {
+                                    return(
+                                        <a
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            href={ `${ element.name === 'Email' ? `mailto:${element.address}` : element.address }` }
+                                            key={element.id}
+                                            className='w-7 h-7 cursor-pointer text-slate-900 hover:text-slate-600 dark:text-slate-100 dark:hover:text-slate-400'
+                                        >
+                                            <SVGLogos
+                                                name={element.name}
+                                                icon={element.icon}
+                                            />
+                                        </a>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </motion.div>

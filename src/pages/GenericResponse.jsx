@@ -1,10 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { motion, useIsPresent } from "framer-motion";
 import SEO from "src/components/Generic/SEO";
+import { useContext } from "react";
+import { RefContext } from "src/utils/Context/RefContext";
 
 export default function GenericResponse({ message }){
     const isPresent = useIsPresent();
     const { project } = useParams()
+    const { PATH_IMAGE } = useContext(RefContext)
 
     return(
         <>

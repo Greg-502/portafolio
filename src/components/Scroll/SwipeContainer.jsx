@@ -1,5 +1,4 @@
-import 'boxicons'
-import React, { Suspense, useContext } from 'react'
+import { Suspense, useContext } from 'react'
 import { RefContext } from 'src/utils/Context/RefContext'
 import useNearScreen from 'src/utils/Hooks/useNearScreen'
 import ButtonToTop from './ButtonToTop'

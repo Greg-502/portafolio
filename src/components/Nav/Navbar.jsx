@@ -5,7 +5,7 @@ import DarkMode from './DarkModeIcons';
 
 export default function Navbar() {
     const [show, setShow] = useState(false)
-    const { HandleScroll, menu, skills, footer } = useContext(RefContext)
+    const { HandleScroll, menu, skills, projects } = useContext(RefContext)
 
     return(
         <header ref={ menu } className="px-2 w-full border-b dark:border-slate-600 border-slate-300">
@@ -31,12 +31,12 @@ export default function Navbar() {
                             onClick={ () => {
                                 return(
                                     !setShow() &&
-                                    HandleScroll(footer.current) 
+                                    HandleScroll(projects.current) 
                                 )}
                             }
                             className="nav-link block py-2 pr-4 pl-3 dark:text-slate-400 text-slate-600 hover:text-slate-500 dark:hover:text-slate-100 md:p-0 cursor-pointer md:text-md "
                             >
-                            Sobre mí
+                            Proyectos
                         </li>
                     </ul>
                 </div>

@@ -1,16 +1,15 @@
+import SVGLogos from './SVGLogos'
+
 export default function Links({ data }) {
 
     return(
         <div className="flex border-t border-slate-900 dark:border-slate-600 pt-2 space-x-5">
             <span
-                className='bg-slate-50 rounded-full w-14 h-14 mt-4 flex justify-center items-center'>
-                <box-icon 
-                    type={`${ data.name === 'Email' ? 'solid' : 'logo'}`}
-                    name={ data.icon } 
-                    size="md"
-                    color='#0f172a'
-                >
-                </box-icon>
+                className='bg-slate-50 text-slate-900 rounded-full w-14 h-14 p-3 mt-4 flex justify-center items-center'>
+                <SVGLogos
+                    name={data.name}
+                    icon={data.icon}
+                />
             </span>
 
             <div className='flex justify-center mt-4 flex-col text-left'>
