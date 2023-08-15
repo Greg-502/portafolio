@@ -2,7 +2,6 @@ import { Toaster } from "react-hot-toast";
 import Navbar from 'src/components/Nav/Navbar'
 import Header from 'src/components/Header'
 import Skills from 'src/components/Skills/Skills'
-import SwipeContainer from 'src/components/Scroll/SwipeContainer';
 import Footer from 'src/components/Footer';
 import SEO from 'src/components/Generic/SEO';
 import { useContext } from 'react';
@@ -25,7 +24,6 @@ export default function Home() {
             <Navbar />
             <Header />
             <Skills />
-            <SwipeContainer />
             <Footer />
         </>
     );

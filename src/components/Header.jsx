@@ -56,6 +56,7 @@ export default function Header() {
                                             aria-label={`Link for go to my: ${element.name}`}
                                             target="_blank"
                                             rel="noreferrer"
+                                            title={`${element.name}`}
                                             href={ `${ element.name === 'Email' ? `mailto:${element.address}` : element.address }` }
                                             key={element.id}
                                             className='w-7 h-7 cursor-pointer text-slate-900 hover:text-slate-600 dark:text-slate-100 dark:hover:text-slate-400'
