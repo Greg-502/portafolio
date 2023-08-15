@@ -10,7 +10,7 @@ export default function Header() {
     const [ data ] = useFetchRequest("json/links.json")
 
     return(
-        <div className='flex justify-center items-center flex-col py-10 px-6 md:px-2 min-h-screen md:min-h-full'>
+        <header className='flex justify-center items-center flex-col p-6 md:px-2 min-h-screen md:min-h-full'>
             <div className="md:grid md:grid-cols-2 md:gap-10 md:justify-evenly md:max-w-full lg:max-w-7xl md:p-10">
                 <motion.div 
                     initial={{ opacity:0, scale:0.5 }}
@@ -48,24 +48,16 @@ export default function Header() {
                             Contáctame
                         </motion.a>
 
-                        <div className='my-2 p-4 md:space-x-4 space-x-3 flex '>
+                        <div className='my-2 p-4 md:space-x-4 space-x-3 flex'>
                             {
                                 data && data.map((element) => {
                                     return(
-                                        <a
-                                            aria-label={`Link for go to my: ${element.name}`}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            title={`${element.name}`}
-                                            href={ `${ element.name === 'Email' ? `mailto:${element.address}` : element.address }` }
+                                        <SVGLogos
                                             key={element.id}
-                                            className='w-7 h-7 cursor-pointer text-slate-900 hover:text-slate-600 dark:text-slate-100 dark:hover:text-slate-400'
-                                        >
-                                            <SVGLogos
-                                                name={element.name}
-                                                icon={element.icon}
-                                            />
-                                        </a>
+                                            name={element.name}
+                                            icon={element.icon}
+                                            address={element.address}
+                                        />
                                     )
                                 })
                             }
@@ -120,7 +112,7 @@ export default function Header() {
                 className="top-0 bottom-0 right-0 left-0 fixed z-20 bg-purple-500"
             >
             </motion.div>
-        </div>
+        </header>
     )
 }
 

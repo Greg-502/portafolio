@@ -8,7 +8,7 @@ export default function Navbar() {
     const { HandleScroll, menu, skills, projects } = useContext(RefContext)
 
     return(
-        <header ref={ menu } className="px-2 w-full border-b dark:border-slate-600 border-slate-300">
+        <div ref={ menu } className="px-2 w-full border-b dark:border-slate-600 border-slate-300">
             <nav className="container flex flex-wrap justify-between md:justify-center items-center mx-auto">
                 <DarkMode />
                 <div className="flex md:order-2 md:hidden">
@@ -41,6 +41,6 @@ export default function Navbar() {
                     </ul>
                 </div>
             </nav>
-        </header>
+        </div>
     )
 }

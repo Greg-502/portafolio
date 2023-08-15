@@ -12,7 +12,7 @@ export default function Skills () {
     const { skills } = useContext(RefContext)
     
     return(
-        <>
+        <main>
             <motion.section 
                 initial={{ opacity:0, scale:0.5 }}
                 animate={{ opacity:1, scale:1 }}
@@ -50,7 +50,7 @@ export default function Skills () {
             </motion.section>
             
             { data && <SwipeContainer /> }
-        </>
+        </main>
     )
 
 }
